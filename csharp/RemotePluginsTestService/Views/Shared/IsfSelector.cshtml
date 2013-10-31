@@ -1,0 +1,24 @@
+﻿<script>
+
+	function createIsfContent() {
+
+		// get the return URL to send the response back to D2L
+		var returnUrl = '@ViewBag.ReturnUrl';
+
+		var imageUrl = '@ViewBag.HostName' + $( this ).children( 'img' ).attr( 'src' );
+
+		var imageTag = '<img src="' + imageUrl + '" />';
+
+		returnUrl += '?content=' + encodeURIComponent( imageTag );
+
+		window.location.href = returnUrl;
+	}
+
+	$( document ).ready( function () {
+
+		$( "a.thumbnail" ).click( createIsfContent );
+	});
+
+</script>
+
+@Html.Partial( "Partial/Dogs" )

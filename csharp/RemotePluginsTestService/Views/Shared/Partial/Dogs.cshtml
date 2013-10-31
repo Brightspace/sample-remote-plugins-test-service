@@ -1,0 +1,25 @@
+﻿@model IEnumerable<RemotePluginsTestService.Models.Dog>
+
+<div class="col-xs-11">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<ul class="media-list">
+					@foreach( var dog in Model ) {
+
+						<li class="media">
+							<a class="pull-left thumbnail col-xs-2" href="#">
+
+								<img class="media-object img-responsive" src="@Url.Content( dog.ImageUrl )" alt="puppies!" />
+							</a>
+							<div class="media-body col-xs-8">
+								<h4>Dog</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							</div>
+						</li>
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

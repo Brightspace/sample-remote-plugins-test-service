@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+
+	@if( ViewBag.OAuthValid != null ) {
+		<div id="validation">
+			@Html.Partial( "Partial/OAuthCheck" )
+		</div>
+	}
+
+	@if( ViewBag.LaunchParameters != null ) {
+		<div id="lti">
+			@Html.Partial( "Partial/LaunchParameters" )
+		</div>
+	}
+
+	<div id ="content">
+		@RenderBody()
+	</div>
+</body>
+</html>

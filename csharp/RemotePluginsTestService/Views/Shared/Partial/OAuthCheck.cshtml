@@ -1,0 +1,7 @@
+﻿<div class="col-xs-11">
+@if( ViewBag.OAuthValid ) {
+	<div class="alert alert-success"><strong>Valid.</strong> OAuth signature is good.</div>
+} else {
+	<div class="alert alert-danger"><strong>Invalid!</strong> OAuth signature is NOT correct!</div>
+}
+</div>

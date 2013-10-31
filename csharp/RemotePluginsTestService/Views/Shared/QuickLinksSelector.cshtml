@@ -1,0 +1,31 @@
+﻿<script>
+
+	function createQuicklink() {
+
+		// get the return URL to send the response back to D2L
+		var returnUrl = '@ViewBag.ReturnUrl';
+
+		var imageUrl = '@ViewBag.HostName' + $( this ).children( 'img' ).attr( 'src' );
+
+		returnUrl += '?quickLink=' + encodeURIComponent( imageUrl ) + '&title=Dog Picture&target=SameFrame';
+
+		window.location.href = returnUrl;
+	}
+
+	function getParameterByName(name) {
+
+		var match = RegExp('[?&]' + name + '=([^&]*)')
+			.exec(window.location.search);
+
+		return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+	}
+
+
+	$( document ).ready( function () {
+
+		$( "a.thumbnail" ).click( createQuicklink );
+	});
+ 
+</script>
+
+@Html.Partial( "Partial/Dogs" )
