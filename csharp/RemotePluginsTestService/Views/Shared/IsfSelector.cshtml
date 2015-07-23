@@ -5,7 +5,7 @@
 		// get the return URL to send the response back to D2L
 		var returnUrl = '@ViewBag.ReturnUrl';
 
-		var imageUrl = '@ViewBag.HostName' + $( this ).children( 'img' ).attr( 'src' );
+		var imageUrl = '//@ViewBag.HostName' + $( this ).children( 'img' ).attr( 'src' );
 
 		var imageTag = '<img src="' + imageUrl + '" />';
 

@@ -80,7 +80,7 @@ namespace RemotePluginsTestService.Controllers {
 
 			ViewBag.LaunchParameters = ExtractLaunchParameters( collection );
 
-			string hostname = ConfigurationManager.AppSettings["hostname"];
+			string hostname = HttpContext.Request.Url.Host;
 
 			ViewBag.HostName = hostname;
 
